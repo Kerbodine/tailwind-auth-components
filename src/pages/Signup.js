@@ -29,7 +29,7 @@ export default function Signup() {
             <input
               type="text"
               placeholder="First name"
-              className="mb-2 focus:outline-none border-2 px-2 py-1 w-full rounded-lg border-gray-200 focus:border-gray-600"
+              className="mb-2 focus:outline-none border-2 px-2 py-1 w-full rounded-lg border-gray-200 focus:border-gray-600 text-gray-700"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               required
@@ -37,7 +37,7 @@ export default function Signup() {
             <input
               type="text"
               placeholder="Last name"
-              className="mb-2 focus:outline-none border-2 px-2 py-1 w-full rounded-lg border-gray-200 focus:border-gray-600"
+              className="mb-2 focus:outline-none border-2 px-2 py-1 w-full rounded-lg border-gray-200 focus:border-gray-600 text-gray-700"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
@@ -46,7 +46,7 @@ export default function Signup() {
           <input
             type="email"
             placeholder="Email address"
-            className="mb-2 focus:outline-none border-2 px-2 py-1 w-full rounded-lg border-gray-200 focus:border-gray-600"
+            className="mb-2 focus:outline-none border-2 px-2 py-1 w-full rounded-lg border-gray-200 focus:border-gray-600 text-gray-700"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -55,12 +55,13 @@ export default function Signup() {
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Password"
-              className="focus:outline-none border-2 px-2 py-1 w-full rounded-lg border-gray-200 focus:border-gray-600"
+              className="focus:outline-none border-2 px-2 py-1 w-full rounded-lg border-gray-200 focus:border-gray-600 text-gray-700"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
             <button
+              type="button"
               className="-ml-7 text-xl text-gray-500 hover:text-gray-700"
               onClick={() => setShowPassword(!showPassword)}
             >
@@ -68,7 +69,7 @@ export default function Signup() {
             </button>
           </div>
           {error && (
-            <div className="w-full p-0.5 text-red-400 rounded-lg flex text-sm font-medium gap-1 bg-red-100 border-2 border-red-300 mt-2">
+            <div className="w-full p-0.5 text-red-400 rounded-lg flex text-sm font-medium gap-1 bg-red-100 border-2 border-red-400 mt-2">
               <BiInfoCircle className="rotate-180 text-xl flex-none" />
               <p className="flex-auto truncate">{error}</p>
             </div>
