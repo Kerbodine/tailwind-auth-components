@@ -1,16 +1,17 @@
-import InputFloatingLabel from "./components/inputs/InputFloatingLabel";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import ResetPassword from "./pages/ResetPassword";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
-    <div className="w-full h-screen grid place-items-center bg-gray-600">
-      <div className="w-64 h-64 bg-white rounded-2xl shadow-lg p-4">
-        <InputFloatingLabel
-          id="email"
-          type="email"
-          placeholder="Email Address"
-        />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+      </Routes>
+    </Router>
   );
 }
 

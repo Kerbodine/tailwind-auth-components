@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -15,6 +16,10 @@ module.exports = {
           }
           return `rgb(var(--accent)`;
         },
+      },
+      screens: {
+        xs: "480px",
+        ...defaultTheme.screens,
       },
     },
   },
