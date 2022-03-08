@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BiHide, BiInfoCircle, BiLoaderAlt, BiShow } from "react-icons/bi";
+import { SiApple, SiGithub, SiGoogle } from "react-icons/si";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -23,10 +24,38 @@ export default function Login() {
       <div className="border-gray-200 p-8 xs:border-2 rounded-2xl">
         <form className="w-[240px] relative" onSubmit={handleSubmit}>
           <h1 className="text-2xl xs:text-3xl font-semibold mb-4">Log in</h1>
+          <div className="flex h-9 gap-2">
+            <button
+              type="button"
+              onClick={null}
+              className="rounded-lg text-lg grid place-items-center hover:border-gray-600 hover:text-white hover:bg-gray-600 text-gray-600 w-full border-2 border-gray-200"
+            >
+              <SiGoogle />
+            </button>
+            <button
+              type="button"
+              onClick={null}
+              className="rounded-lg text-lg grid place-items-center hover:border-gray-600 hover:text-white hover:bg-gray-600 text-gray-600 w-full border-2 border-gray-200"
+            >
+              <SiApple />
+            </button>
+            <button
+              type="button"
+              onClick={null}
+              className="rounded-lg text-lg grid place-items-center hover:border-gray-600 hover:text-white hover:bg-gray-600 text-gray-600 w-full border-2 border-gray-200"
+            >
+              <SiGithub />
+            </button>
+          </div>
+          <div className="my-2 w-full flex items-center">
+            <div className="flex-auto h-0.5 bg-gray-200"></div>
+            <p className="mx-2 text-xs font-bold text-gray-500">OR</p>
+            <div className="flex-auto h-0.5 bg-gray-200"></div>
+          </div>
           <input
             type="email"
             placeholder="Email address"
-            className="mb-2 focus:outline-none border-2 px-2 py-1 w-full rounded-lg border-gray-200 focus:border-gray-600 text-gray-700"
+            className="mb-2 focus:outline-none border-2 px-2 py-1 w-full rounded-lg border-gray-200 focus:border-gray-400 text-gray-600"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -35,14 +64,14 @@ export default function Login() {
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Password"
-              className="focus:outline-none border-2 px-2 py-1 w-full rounded-lg border-gray-200 focus:border-gray-600 text-gray-700"
+              className="focus:outline-none border-2 px-2 py-1 w-full rounded-lg border-gray-200 focus:border-gray-400 text-gray-600"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
             <button
               type="button"
-              className="-ml-7 text-xl text-gray-500 hover:text-gray-700"
+              className="-ml-7 text-xl text-gray-400 hover:text-gray-600"
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? <BiHide /> : <BiShow />}
@@ -61,7 +90,7 @@ export default function Login() {
           </div>
           <button
             type="submit"
-            className="mt-4 px-2 py-1 text-sm rounded-lg border-gray-600 border-2 text-gray-700 font-medium hover:bg-gray-600 hover:text-white"
+            className="mt-4 px-2 py-1 text-sm rounded-lg border-gray-600 border-2 text-gray-600 font-medium hover:bg-gray-600 hover:text-white"
           >
             Log in →
           </button>
