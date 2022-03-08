@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BiHide, BiInfoCircle, BiLoaderAlt, BiShow } from "react-icons/bi";
-import { SiApple, SiGithub, SiGoogle } from "react-icons/si";
+import { ReactComponent as GoogleIcon } from "./google.svg";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -24,29 +24,16 @@ export default function Login() {
       <div className="border-gray-200 p-8 xs:border-2 rounded-2xl">
         <form className="w-[240px] relative" onSubmit={handleSubmit}>
           <h1 className="text-2xl xs:text-3xl font-semibold mb-4">Log in</h1>
-          <div className="flex h-9 gap-2">
-            <button
-              type="button"
-              onClick={null}
-              className="rounded-lg text-lg grid place-items-center hover:border-gray-600 hover:text-white hover:bg-gray-600 text-gray-600 w-full border-2 border-gray-200"
-            >
-              <SiGoogle />
-            </button>
-            <button
-              type="button"
-              onClick={null}
-              className="rounded-lg text-lg grid place-items-center hover:border-gray-600 hover:text-white hover:bg-gray-600 text-gray-600 w-full border-2 border-gray-200"
-            >
-              <SiApple />
-            </button>
-            <button
-              type="button"
-              onClick={null}
-              className="rounded-lg text-lg grid place-items-center hover:border-gray-600 hover:text-white hover:bg-gray-600 text-gray-600 w-full border-2 border-gray-200"
-            >
-              <SiGithub />
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={null}
+            className="h-9 px-2 font-medium text-sm gap-2 flex items-center rounded-lg hover:border-gray-400 text-gray-600 w-full border-2 border-gray-200"
+          >
+            <span className="text-base">
+              <GoogleIcon />
+            </span>
+            Continue with Google
+          </button>
           <div className="my-2 w-full flex items-center">
             <div className="flex-auto h-0.5 bg-gray-200"></div>
             <p className="mx-2 text-xs font-bold text-gray-500">OR</p>
