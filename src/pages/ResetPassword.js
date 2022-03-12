@@ -7,6 +7,7 @@ export default function ResetPassword() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // Default submit function
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
